@@ -1,0 +1,381 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>momen IO Machine</title>
+
+    <!-- global CSS Starts -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <link rel="stylesheet" href="css/template/p15_ex11.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- global CSS End -->
+
+    <!-- global JS Starts -->
+    <script src="js/lib/jquery_v3.3.1.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/lib/interact.min.js"></script>
+    <script src="js/lib/underscore-min.js"></script>
+    <!-- <script src="js/lib/bootstrap.bundle.min.js"></script> -->
+    <!-- global JS End -->
+
+    <style>
+        .w3-button:hover {
+            /* color: #000!important; */
+            background-color: transparent !important;
+        }
+
+        .operation:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        .operation .tooltiptext {
+            visibility: hidden;
+            width: 350px;
+            background-color: #24579d ;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            font-size: 19px;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            /* left: -36px; */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <div class="page_content">
+
+            <div class="container-fluid noPadding">
+                <!-- header start -->
+                <div class="col-xs-12 noPadding header">
+                    <div class="box1 title" data-audioSrc="assets/audio/p15e11.mp3" onClick="fnTitleAudioClick(this)">
+                        <img src="assets/images/audio_icon.png" class="img-responsive" />
+                    </div>
+                    <div class="boxhead5 headingTitle">
+                        <h1>Explore Creating a Table of Input-Output Values </h1>
+                    </div>
+
+                    <div class="box1 hide">
+                        <div class="resourseBtn hide">
+                            <img src="assets/images/resourse_icon.png" class="img-responsive" />
+                        </div>
+                    </div>
+
+                    <div class="box1 pull-right helpBtn hide">
+                        <img src="assets/images/help_icon.png" class="img-responsive" />
+                    </div>
+                </div>
+                <audio id="audioPlayer1" preload="auto" src=""></audio>
+                <audio id="audioPlayer2" preload="auto" src=""></audio>
+                <!-- header end -->
+
+                <!-- page start -->
+                <section class="col-xs-12 pageContainer">
+                    <div class="pageBg col-xs-12"></div>
+                    <div class="pageContent col-xs-12">
+                        <div id="myCarousel" class="carousel slide template4_v1" data-ride="carousel" data-interval="0"
+                            data-wrap="false" data-id="template4_v1">
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active" style="height: 100%;" data-audioSrc="">
+                                    <div class="itemContainer" id="itemContainer_1" style="height: 100%;">
+
+
+
+                                        <div class="right_table">
+                                            <span>
+                                                <input type="checkbox" id="checkbox" checked style="    width: 6%;
+                                                height: 27px;"> Show Table
+                                            </span>
+
+
+                                            <div style="height:580px;overflow:overlay;">
+
+
+
+
+                                                <table class="put_input" id="row">
+                                                    <thead>
+
+                                                        <th>Input</th>
+                                                        <th>operation</th>
+                                                        <th>Output</th>
+
+
+                                                    </thead>
+
+                                                    <tbody id="tasks">
+
+
+
+                                                        <!-- <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>   <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>   <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr> -->
+                                                    </tbody>
+
+                                                </table>
+
+                                            </div>
+                                            <button id="clear" class="btn btn-primary" style="    font-size: 20px;
+                                                margin: 9px auto; 
+                                                width: max-content;"> Clear Table </button>
+
+
+
+                                        </div>
+
+
+
+
+                                        <div id="yes-drop1" class="drag-drop">
+                                            <h1>1</h1>
+                                            <div class="caption"></div>
+                                        </div>
+                                        <div id="yes-drop2" class="drag-drop">
+                                            <h1>2</h1>
+                                            <div class="caption"></div>
+                                        </div>
+                                        <div id="yes-drop3" class="drag-drop">
+                                            <h1>3</h1>
+                                            <div class="caption"></div>
+                                        </div>
+                                        <div id="yes-drop4" class="drag-drop">
+                                            <h1>4</h1>
+                                            <div class="caption"></div>
+                                        </div>
+                                        <div id="yes-drop5" class="drag-drop">
+                                            <h1>5</h1>
+                                            <div class="caption"></div>
+                                        </div>
+                                        <br>
+                                        <div id="yes-drop6" class="drag-drop">
+                                            <h1>6</h1>
+                                            <div class="caption"></div>
+                                        </div>
+                                        <div id="yes-drop7" class="drag-drop">
+                                            <h1>7</h1>
+                                            <div class="caption"></div>
+                                        </div>
+                                        <div id="yes-drop8" class="drag-drop">
+                                            <h1>8</h1>
+                                            <div class="caption"></div>
+                                        </div>
+                                        <div id="yes-drop9" class="drag-drop">
+                                            <h1>9</h1>
+                                            <div class="caption"></div>
+                                        </div>
+                                        <div id="yes-drop10" class="drag-drop">
+                                            <h1>10</h1>
+                                            <div class="caption"></div>
+                                        </div>
+
+
+                                        <div class="optionContainer">
+                                            <table class="put_number">
+                                                <tbody>
+                                                    <tr>
+                                                        <td id="outer-dropzone1" class="heat" style=" 
+                                                        align-content: center;
+                                                        justify-content: center;
+                                                        align-items: center;
+                                                        margin: auto;
+                                                        border: none !important;">
+                                                            <div id="inner-dropzone1" class="heat">
+                                                            </div>
+                                                        </td>
+
+                                                </tbody>
+                                            </table>
+                                            <div class="machine">
+                                                <img src="assets/images/p15e11/download (1).png" style="width: 400px;">
+
+                                                <div class="operation">
+
+                                                    <span class="tooltiptext">click to change operation or number
+                                                    </span>
+                                                    <span id="operation">+</span>
+                                                    <span id="number_ope">0</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="w3-container">
+
+
+                                            <div id="id01" class="w3-modal">
+                                                <div class="w3-modal-content w3-card-4 w3-animate-zoom"
+                                                    style="max-width:250px">
+
+
+                                                    <div style="    padding: 30px 0;
+                                                    text-align: center;
+                                                    font-size: 34px; ">
+                                                        <select id="select" style="border: 1px solid;">
+                                                            <option data-display="Select" value="+">+</option>
+                                                            <option value="-">-</option>
+                                                            <option value="*">*</option>
+                                                            <option value="/">/</option>
+                                                        </select>
+                                                        <input id="myNumber" type="number" min="1" max="999999" step="1"
+                                                            value="0" autofocus style="width: 100px;
+                                            height: 48px; border: 1px solid;" />
+
+
+                                                    </div>
+
+                                                    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                                                        <button
+                                                            onclick="document.getElementById('id01').style.display='none'"
+                                                            type="button" class="w3-button w3-red">Ok</button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- page end -->
+
+                <!-- footer start -->
+                <div class="row">
+                    <div class="col-xs-12 footer">
+                        <div class="box1" title="Restart" id="restart">
+                            <div class="reloadBtnAll">
+                                <img src="assets/images/replay_icon.png" class="img-responsive" />
+                            </div>
+                        </div>
+
+                        <div style="visibility: hidden;" class="box3">
+                            <div class="audioPlayerContainer" id="audioDragContainer">
+                                <div class="col-xs-12 controlsDiv">
+                                    <div class="controlsinline">
+                                        <div id="pButton" class="col-xs-1 noPadding">
+                                            <img src="assets/images/play.png" class="img-responsive playImg"
+                                                onClick="fnStartAudio('play');" />
+                                            <img src="assets/images/pause.png" class="img-responsive pauseImg"
+                                                onClick="fnStartAudio('pause');" />
+                                        </div>
+                                        <div class="col-xs-11" id="audioDrag">
+                                            <div class="slidecontainer">
+                                                <input type="range" min="0" max="100" value="0" class="slider"
+                                                    id="myRange" step="0.1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box1">
+
+                            <div class="reloadBtnScreen">
+                                <img src="assets/images/reload_icon.png" class="img-responsive" />
+                            </div>
+                        </div>
+
+                        <div class="box2">
+                            <div class="showAnsBtn">
+                                <img src="assets/images/showAns_icon.png" class="img-responsive" />
+                            </div>
+                        </div>
+
+                        <div class="box1">
+                            <div class="backBtn">
+                                <img src="assets/images/back_icon.png" class="img-responsive" />
+                            </div>
+                        </div>
+
+                        <div class="box4">
+                            <div class="pageNumber">1 of 2</div>
+                        </div>
+
+                        <div class="box1">
+                            <div class="nextBtn">
+                                <img src="assets/images/next_icon.png" class="img-responsive inlineblock" />
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- footer end -->
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            fnSetPlayer();
+            fnTemplate4_v1($('div.active'));
+        });
+
+        $(document).ready(function () {
+            $('#checkbox').change(function () {
+                if (this.checked) {
+                    document.getElementById("row").style.visibility = "inherit";
+                    document.getElementById("clear").style.visibility = "inherit";
+                } else {
+                    document.getElementById("row").style.visibility = "hidden";
+                    document.getElementById("clear").style.visibility = "hidden";
+                }
+
+            });
+            $('#checkbox').change();
+        });
+
+
+
+
+        function myFunction() {
+            var x = document.getElementById("myNumber").autofocus;
+        }
+    </script>
+
+    <script type="text/javascript" src="js/template/p15_ex11.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
